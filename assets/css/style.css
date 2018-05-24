@@ -244,7 +244,7 @@
     .pb_feature-v1.pb_feature-circle.pb_feature-colored .pb_icon,
     .pb_feature-v2.pb_feature-circle.pb_feature-colored .pb_icon {
       border: none;
-      background: #1d82ff; }
+      : #1d82ff; }
       .pb_feature-v1.pb_feature-circle.pb_feature-colored .pb_icon i,
       .pb_feature-v2.pb_feature-circle.pb_feature-colored .pb_icon i {
         color: #fff; }
@@ -703,7 +703,7 @@
   background: -webkit-linear-gradient(45deg, #665fee 0%, #27c2de 100%);
   /* Chrome10-25,Safari5.1-6 */
   background: -o-linear-gradient(45deg, #665fee 0%, #27c2de 100%);
-  background: linear-gradient(45deg, #665fee 0%, #27c2de 100%);
+  background: linear-gradient(0deg, #665fee 0%, #000000 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#665fee', endColorstr='#27c2de',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */
@@ -986,6 +986,17 @@ input, select, textarea {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
+
+@-webkit-keyframes blink {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
 @-webkit-keyframes loader-dash {
   0% {
@@ -1344,6 +1355,13 @@ a {
     left: -40%;
     z-index: 1;
     max-width: 500px; }
+  .red_dot {
+    animation: blink 3s;
+    animation-iteration-count: infinite;
+    height: 20px;
+    padding: 5px;
+    transform: translateY(-1.5px); }
+
     @media (max-width: 767px) {
       .images.right .img2 {
         position: relative;
